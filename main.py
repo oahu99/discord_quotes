@@ -7,6 +7,7 @@ client = d.Client()
 
 df = pd.read_csv('The_Quotes_Doc_-_Quotes.csv')
 print(df.loc[1,'Quote'])
+print(os.getenv('HOME'))
 
 @client.event
 async def on_message(message):
@@ -23,4 +24,4 @@ async def on_message(message):
 		except :
 			await message.channel.send("OOPSIES you made a fucky wucky, no quote exists uwu")
 
-client.run('NzkwMTEwNjA3NzAwOTE4Mjky.X9712A.b1-zCPRyWv_vrav66QKreTgLaYE')
+client.run(os.getenv('TOKEN'))
